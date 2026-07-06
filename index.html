@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pramātṛ–Prameya · Series A Extended · Part Six — Śrī Vidyā Sādhana and the Grammar of Nāda-Bindu-Kalā</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-void:#1a0b0e;
+    --bg-panel:#241014;
+    --bg-panel-raised:#2c141a;
+    --crimson:#7a1f2b;
+    --crimson-bright:#a5313f;
+    --gold:#c9a44c;
+    --gold-bright:#e8c874;
+    --gold-dim:#8a7038;
+    --ivory:#e9dfd1;
+    --ivory-dim:#b7a894;
+    --line:rgba(201,164,76,0.22);
+    --shadow-deep: 0 20px 60px rgba(0,0,0,0.55);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(ellipse at top, #2a1216 0%, var(--bg-void) 55%),
+      var(--bg-void);
+    color:var(--ivory);
+    font-family:'EB Garamond', serif;
+    line-height:1.7;
+  }
+  .devanagari, .skt{ font-family:'Noto Serif Devanagari', serif; }
+  h1,h2,h3,.eyebrow,.tab-label{ font-family:'Cinzel', serif; letter-spacing:0.04em; }
+  .skt-title{ font-family:'Cormorant Garamond', serif; font-style:italic; }
+
+  header.masthead{
+    padding:64px 24px 40px;
+    text-align:center;
+    border-bottom:1px solid var(--line);
+    background:
+      linear-gradient(180deg, rgba(122,31,43,0.25), transparent 70%);
+  }
+  .eyebrow{
+    color:var(--gold-dim);
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.28em;
+    margin-bottom:18px;
+  }
+  h1.title{
+    font-size:2.6rem;
+    color:var(--gold-bright);
+    margin:0 0 10px;
+    font-weight:600;
+    line-height:1.25;
+    text-shadow:0 2px 20px rgba(232,200,116,0.15);
+  }
+  .subtitle{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.35rem;
+    color:var(--ivory-dim);
+    max-width:720px;
+    margin:0 auto;
+  }
+  .bindu{
+    width:10px;height:10px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, var(--gold-bright), var(--gold-dim));
+    display:inline-block;margin:22px 0;
+    box-shadow:0 0 18px 4px rgba(201,164,76,0.35);
+  }
+
+  main{ max-width:900px; margin:0 auto; padding:48px 24px 100px; }
+
+  section.block{
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:36px 40px;
+    margin-bottom:34px;
+    box-shadow:var(--shadow-deep);
+  }
+  section.block h2{
+    color:var(--gold-bright);
+    font-size:1.3rem;
+    margin-top:0;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--line);
+  }
+  section.block h2 .num{ color:var(--gold-dim); margin-right:10px; }
+  p{ margin:0 0 16px; }
+  .lede{ font-size:1.12rem; color:var(--ivory); }
+
+  .evidence-tag{
+    display:inline-block;
+    font-family:'Cinzel', serif;
+    font-size:0.62rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    padding:3px 9px;
+    border-radius:2px;
+    margin-bottom:10px;
+  }
+  .tag-canon{ background:rgba(122,31,43,0.35); color:var(--gold-bright); border:1px solid var(--crimson-bright); }
+  .tag-synth{ background:rgba(201,164,76,0.12); color:var(--gold); border:1px solid var(--gold-dim); }
+  .tag-flag{ background:rgba(80,80,80,0.25); color:var(--ivory-dim); border:1px dashed var(--ivory-dim); }
+
+  /* Tabs */
+  .tabs-nav{
+    display:flex; flex-wrap:wrap; gap:8px;
+    margin-bottom:28px;
+  }
+  .tab-btn{
+    font-family:'Cinzel', serif;
+    font-size:0.7rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    background:var(--bg-panel-raised);
+    color:var(--ivory-dim);
+    border:1px solid var(--line);
+    padding:10px 14px;
+    border-radius:3px;
+    cursor:pointer;
+    transition:all 0.2s ease;
+  }
+  .tab-btn:hover{ color:var(--gold-bright); border-color:var(--gold-dim); }
+  .tab-btn.active{
+    color:var(--bg-void);
+    background:var(--gold-bright);
+    border-color:var(--gold-bright);
+  }
+  .tab-panel{ display:none; }
+  .tab-panel.active{ display:block; animation:fade .3s ease; }
+  @keyframes fade{ from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:none;} }
+
+  .module-focus{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    color:var(--gold);
+    font-size:1.15rem;
+    margin-bottom:18px;
+  }
+
+  .lpup-grid{ display:grid; gap:18px; margin-top:22px; }
+  .lpup-card{
+    border-left:3px solid var(--gold-dim);
+    background:var(--bg-panel-raised);
+    padding:18px 22px;
+    border-radius:0 3px 3px 0;
+  }
+  .lpup-card h4{
+    margin:0 0 8px;
+    color:var(--gold-bright);
+    font-family:'Cinzel', serif;
+    font-size:0.85rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+  }
+  .lpup-card .skt-inline{ color:var(--gold); font-style:italic; }
+
+  .diagram{
+    font-family:'Cormorant Garamond', serif;
+    text-align:center;
+    color:var(--gold);
+    background:rgba(0,0,0,0.25);
+    border:1px dashed var(--line);
+    padding:20px;
+    border-radius:4px;
+    font-size:1.05rem;
+    letter-spacing:0.03em;
+    margin:20px 0;
+    white-space:pre-line;
+  }
+
+  table.xref{
+    width:100%; border-collapse:collapse; margin-top:18px; font-size:0.92rem;
+  }
+  table.xref th{
+    font-family:'Cinzel', serif; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--gold-bright); text-align:left; padding:10px 12px; border-bottom:1px solid var(--gold-dim);
+  }
+  table.xref td{ padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; color:var(--ivory-dim); }
+  table.xref tr:hover td{ color:var(--ivory); }
+
+  .fnote{ font-size:0.85rem; color:var(--ivory-dim); }
+  .fnote sup{ color:var(--gold); }
+  ol.footnotes{ padding-left:20px; font-size:0.88rem; color:var(--ivory-dim); }
+  ol.footnotes li{ margin-bottom:10px; }
+
+  .phase-roadmap{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:20px; }
+  .phase-card{
+    background:var(--bg-panel-raised); border:1px solid var(--line); border-radius:4px; padding:18px 20px;
+  }
+  .phase-card.current{ border-color:var(--gold-bright); box-shadow:0 0 0 1px var(--gold-bright) inset; }
+  .phase-card h4{ margin:0 0 6px; color:var(--gold-bright); font-family:'Cinzel'; font-size:0.85rem; letter-spacing:0.05em; }
+  .phase-card p{ margin:0; font-size:0.85rem; color:var(--ivory-dim); }
+  .status{ font-size:0.68rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--gold-dim); font-family:'Cinzel'; }
+
+  footer{
+    text-align:center; padding:40px 24px; color:var(--ivory-dim); font-size:0.82rem;
+    border-top:1px solid var(--line);
+  }
+  a{ color:var(--gold); }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="eyebrow">Pramātṛ–Prameya · The Sūtra Across Forty-Two Lenses · Series A Extended</div>
+  <h1 class="title">Part Six<br><span class="skt-title">Śrī Vidyā Sādhana and the Grammar of Nāda-Bindu-Kalā</span></h1>
+  <div class="bindu"></div>
+  <p class="subtitle">Sound, Point, and Emanation across the Lalitā Pentad — Sahasranāma, Khaḍgamālā, Devī Bhāgavatam, Triśatī, and Durgā Saptaśatī</p>
+</header>
+
+<main>
+
+  <section class="block" id="introduction">
+    <h2><span class="num">§0</span>Introduction</h2>
+    <p class="lede">Parts Two through Five of this series traced Vāk from Śabdabrahman through Sphoṭa, through the Mātṛkā alphabet and its installation in the body via Nyāsa, into the yogic physiology of Prāṇa and Citta. That arc answered a structural question: how undifferentiated sound-consciousness differentiates into the phonemic and psychophysical architecture a practitioner actually works with. Part Six asks a different question of the same material — not how Vāk differentiates, but how a coherent ritual-sonic <em>system</em> is built once that differentiation exists.</p>
+    <p>Śrī Vidyā Sādhana is the tradition's own answer: a single architecture in which cosmic resonance (Nāda), geometric singularity (Bindu), and manifest attribute (Kalā) are treated as three descriptions of one event — and in which that event is simultaneously a cosmogony, a diagram (the Śrī Cakra), and a spoken mantra (the Pañcadaśākṣarī).</p>
+    <p>This part draws on five texts that are rarely read as a single corpus, precisely because each operates in a different register: the <strong>Lalitha Sahasranāma</strong> is nominal and encyclopedic; the <strong>Devī Khaḍgamālā</strong> is procedural, sequencing names into a worship-order that mirrors the Cakra's geometry; the <strong>Lalitha Triśatī</strong> is phonemic, distributing three hundred names across fifteen mantric syllables; the <strong>Durgā Saptaśatī</strong> is narrative and martial, encoding the same triadic structure — Mahākālī, Mahālakṣmī, Mahāsarasvatī — as a battle sequence rather than a static diagram; and the <strong>Devī Bhāgavatam</strong> supplies the theological scaffolding (Devī Gītā's Nirguṇa/Saguṇa distinction, the cosmography of Maṇidvīpa) the other four presuppose but rarely state outright.</p>
+    <p>Read separately, each text yields a partial grammar. Read against each other, with Nāda-Bindu-Kalā as the connecting term, they yield something closer to a complete one: a single move — cosmic sound condensing into a point, that point opening into named, geometric, and narrative form — repeated at every scale, from the Sphoṭa theory established in Part Two, to the Śrī Cakra's nine enclosures, to the syllables of the Pañcadaśākṣarī, to the demon-battles of the Saptaśatī.</p>
+    <span class="evidence-tag tag-canon">Methodological note</span>
+    <p>As with the rest of this series, three-way evidentiary separation is maintained throughout: <strong>(1)</strong> claims directly attested in the five source texts and the major commentarial tradition, principally Bhāskararāya Makhin's <em>Saubhāgyabhāskara</em>; <strong>(2)</strong> synthetic cross-readings proposed in this chapter — connections the tradition permits but does not itself draw explicitly; and <strong>(3)</strong> material flagged as interdisciplinary extension (neuro-acoustic and geometric analogy), offered as heuristic rather than as textual scholarship.</p>
+
+    <div class="phase-roadmap">
+      <div class="phase-card"><span class="status">Below · complete</span><h4>Phase I — Modules 1–4</h4><p>Canonical foundations: Parā-Śakti metaphysics, the fivefold canon, Nāda-Bindu-Kalā, Vāk-Catuṣṭaya and Sphoṭa.</p></div>
+      <div class="phase-card"><span class="status">Below · complete</span><h4>Phase II — Modules 5–8</h4><p>Sacred geometry: the Śrī Cakra, Khaḍgamālā anatomy, Kāmakalā, Maṇidvīpa.</p></div>
+      <div class="phase-card"><span class="status">Below · complete</span><h4>Phase III — Modules 9–13</h4><p>Mantra Śāstra: Pañcadaśākṣarī, Ṣoḍaśī, Triśatī as Mantra-Vigraha, Navārṇa, Kuñjikā.</p></div>
+      <div class="phase-card"><span class="status">Below · complete</span><h4>Phase IV — Modules 14–17</h4><p>Internal alchemy: Pīṭha-Nāḍī-Cakra mapping, Kuṇḍalinī ascent, Dākinī–Yākinī system, Bhūta Śuddhi and Nyāsa.</p></div>
+      <div class="phase-card"><span class="status">Below · complete</span><h4>Phase V — Modules 18–20</h4><p>Psychodynamic theology: the Saptaśatī battles, the three Caritras, Sahasranāma/Triśatī comparative study.</p></div>
+      <div class="phase-card current"><span class="status">Below · in progress</span><h4>Phase VI — Modules 21–25</h4><p>Advanced integration: Samayācāra, neuro-acoustics, cymatics, Dīkṣā-Paramparā ethics, synthesis.</p></div>
+    </div>
+  </section>
+
+  <section class="block" id="phase-one">
+    <h2><span class="num">§I</span>Phase I — Epistemological &amp; Canonical Foundations</h2>
+    <div class="tabs-nav" id="tabsNav"></div>
+    <div id="tabsPanels"></div>
+  </section>
+
+  <section class="block" id="xref">
+    <h2><span class="num">§II</span>Cross-Reference Matrix, Phase I</h2>
+    <p>The working matrix below tracks how each Phase I module draws on the five-text canon. It will extend across the remaining five phases as the chapter grows.</p>
+    <table class="xref">
+      <thead><tr><th>Module</th><th>Primary Theme</th><th>Core Concepts</th><th>Textual Anchors</th></tr></thead>
+      <tbody>
+        <tr><td>M1</td><td>Metaphysics of Parā-Śakti</td><td>Śiva–Śakti non-duality; Parā-Citti; Kādi/Hādi lineages</td><td>Devī Bhāgavatam (Devī Gītā); LS Name 1, Śrī Mātā</td></tr>
+        <tr><td>M2</td><td>The Fivefold Canon</td><td>Structural synchronization of register across text-types</td><td>All five texts, read comparatively</td></tr>
+        <tr><td>M3</td><td>Nāda-Bindu-Kalā</td><td>Cosmic resonance → singularity → manifest ray</td><td>LS 904 Nāda-rūpā; LS 380 Bindu-maṇḍala-vāsinī; Triśatī v.12</td></tr>
+        <tr><td>M4</td><td>Vāk-Catuṣṭaya &amp; Sphoṭa</td><td>Parā–Paśyantī–Madhyamā–Vaikharī; Bhartṛhari's Sphoṭa</td><td>Saptaśatī Bīja structure (Dūm, Hrīm, Klīm) as Vaikharī-to-Paśyantī shift</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="block" id="footnotes">
+    <h2><span class="num">§III</span>Footnotes — Phase I</h2>
+    <ol class="footnotes">
+      <li>Devī Bhāgavata Purāṇa, Devī Gītā section (Skandha VII), on the Nirguṇa/Saguṇa distinction as applied to the Supreme Mother; see Kavi, <em>Devī Bhāgavata Purāṇa with the Tilaka Commentary</em>, Chowkhamba Sanskrit Pratishthan.</li>
+      <li>Bhāskararāya Makhin, <em>Saubhāgyabhāskara</em>, commentary ad Lalitā Sahasranāma Name 1 (Śrī Mātā) — glosses Śrīḥ as inseparable from material and spiritual causation.</li>
+      <li>Kādi-mata and Hādi-mata as the two principal transmission-lineages of the Pañcadaśākṣarī, differentiated by syllable-sequence and presiding sage (Kāma/Manmatha vs. Agastya); referenced across Śrī Vidyā paddhati literature rather than in a single source text — treated here as background context, not textual citation from the five-text canon proper.</li>
+      <li>Devī Khaḍgamālā Stotram, sequence of Āvaraṇa deities from Bhūpura outward to Bindu, as the procedural counterpart to the Sahasranāma's nominal register.</li>
+      <li>Lalitha Sahasranāma Name 904 (Nāda-rūpā) and Name 380 (Bindu-maṇḍala-vāsinī), per Saubhāgyabhāskara.</li>
+      <li>Lalitha Triśatī, verse cluster on Hrīṅkāra-nyāsa-rūpiṇī, per Śaṅkarācārya's Triśatī Bhāṣya (trans. Swami Tapasyananda).</li>
+      <li>Bhartṛhari, Vākyapadīya, Sphoṭa doctrine — established in Part Two of this series (see "Sphoṭa Completed: From Varṇa to Vākya"); cross-applied here to the Śrī Vidyā register.</li>
+      <li><span class="evidence-tag tag-synth">Synthetic</span> The reading of the Saptaśatī's wrathful Bīja-clusters (Dūm, Hrīm, Klīm) as a Vaikharī-to-Paśyantī consciousness-shift is a cross-textual proposal of this chapter; it is not stated in these terms in the Saptaśatī itself, which does not use Bhartṛharian vocabulary.</li>
+    </ol>
+  </section>
+
+  <section class="block" id="phase-two">
+    <h2><span class="num">§IV</span>Phase II — Sacred Geometry &amp; Macro-Microcosmic Architecture</h2>
+    <p>Where Phase I established Nāda-Bindu-Kalā as a metaphysical sequence, Phase II asks what that sequence looks like when it is drawn. The Śrī Cakra is read here not as a separate topic but as the geometric notation of the same condensation — Bindu at the centre, Kalā as the nine enclosures radiating outward, and the Khaḍgamālā as the spoken itinerary that walks a practitioner through it in the correct order.</p>
+    <div class="diagram">[ BINDU ] — the point, Parā-Śakti undivided
+   /\        Central Triangle — Kāmakalā, the first triadic opening
+  /\/\       Two Enclosures of 10 + 10 Triangles — Sarva-siddhi- and
+ / /\ \        Sarva-rakṣākara-cakras (inner and outer decagons)
+/________\   14-Triangle Enclosure — Sarvāśāpari-pūraka-cakra
+[8-petal] [16-petal]  — mental and sensory instruments (Antaḥkaraṇa, Indriyas)
+[____BHŪPURA____]     — the outer square, earth, the ritual ground itself</div>
+    <div class="tabs-nav" id="tabsNav2"></div>
+    <div id="tabsPanels2"></div>
+  </section>
+
+  <section class="block" id="xref2">
+    <h2><span class="num">§V</span>Cross-Reference Matrix, Phase II</h2>
+    <table class="xref">
+      <thead><tr><th>Module</th><th>Primary Theme</th><th>Core Concepts</th><th>Textual Anchors</th></tr></thead>
+      <tbody>
+        <tr><td>M5</td><td>Śrī Cakra Geometry</td><td>Navāvaraṇa; Śiva/Śakti triangle interlock; Bhūpura to Bindu</td><td>Khaḍgamālā Āvaraṇa-sequence; LS epithets per enclosure</td></tr>
+        <tr><td>M6</td><td>Khaḍgamālā Anatomy</td><td>Khaḍga as Viveka; Khecarī/Bhūcarī/Dīkṣā Yoginī tiers</td><td>Devī Khaḍgamālā Stotram; Lalītopākhyāna (Brahmāṇḍa Purāṇa) parallel</td></tr>
+        <tr><td>M7</td><td>Kāmakalā Vilāsa</td><td>White/red Bindu triad; the letter Ē as Ardhacandra</td><td>LS Kāmakalā-rūpā; Lalitha Triśatī expansion</td></tr>
+        <tr><td>M8</td><td>Maṇidvīpa</td><td>Purāṇic cosmography as Cakra blueprint</td><td>Devī Bhāgavatam, Maṇidvīpa-varṇana</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="block" id="footnotes2">
+    <h2><span class="num">§VI</span>Footnotes — Phase II</h2>
+    <ol class="footnotes" start="9">
+      <li>Devī Khaḍgamālā Stotram, full Āvaraṇa sequence from Bhūpura (Prakaṭa Yoginīs) inward to the Bindu (Guru-maṇḍala and Nitya deities).</li>
+      <li>Kāmeśvarī Nityā and the presiding Yoginīs of the fourteen- and ten-triangle enclosures, per the standard Navāvaraṇa Pūjā paddhati; cross-checked against Khaḍgamālā invocation order rather than assumed from geometry alone.</li>
+      <li><span class="evidence-tag tag-synth">Synthetic</span> The comparative table linking Khaḍgamālā's step-sequence to the interior chambers narrated in the Lalītopākhyāna (Brahmāṇḍa Purāṇa) is a structural proposal of this chapter; the two texts are not explicitly cross-indexed in the tradition's own commentarial literature.</li>
+      <li>Kāmakalā Vilāsa of Puṇyānandanātha, verses on the three Bindus (Śiva-bindu above, twin Śakti-bindus below) and their identification with the syllable Ē; trans. Arthur Avalon, Ganesh &amp; Co.</li>
+      <li>Lalitha Sahasranāma, Kāmakalā-rūpā, per Saubhāgyabhāskara; read together with the Ardhacandra (half-moon) notation in Pañcadaśākṣarī transliteration schemes.</li>
+      <li>Devī Bhāgavata Purāṇa, Maṇidvīpa-varṇana (Skandha XI–XII), describing the island of jewels as Tripurasundarī's supreme abode.</li>
+      <li><span class="evidence-tag tag-synth">Synthetic</span> Reading Maṇidvīpa's concentric architecture as a macrocosmic projection of the Śrī Cakra's Navāvaraṇa is a comparative proposal made in this chapter; the Devī Bhāgavatam describes Maṇidvīpa's geography in its own terms and does not itself equate it explicitly, enclosure-for-enclosure, with the Cakra diagram.</li>
+    </ol>
+  </section>
+
+  <section class="block" id="phase-three">
+    <h2><span class="num">§VII</span>Phase III — Sonic Alchemy &amp; Mantra Śāstra</h2>
+    <p>Phase I established Vāk-Catuṣṭaya as the linguistic register of Nāda-Bindu-Kalā; Phase II gave its geometric register in the Śrī Cakra. Phase III now asks what happens when the two are fused directly — when a specific, finite sequence of syllables is treated not as a description of the Cakra but as functionally identical to it. The Pañcadaśākṣarī is the case in point: fifteen syllables that are also, the tradition holds, the Goddess's own acoustic body.</p>
+    <div class="diagram">VĀGBHAVA KŪṬA (Ka Ē Ī La Hrīṃ) — head/speech, five syllables
+        ↓
+KĀMARĀJA / MADHYA KŪṬA (Ha Sa Ka Ha La Hrīṃ) — heart/vitality, six syllables
+        ↓
+ŚAKTI KŪṬA (Sa Ka La Hrīṃ) — base/dissolution, four syllables
+        ↓
+[ + ṢOḌAŚĪ — the unspoken sixteenth, the Bindu the fifteen already presuppose ]</div>
+    <div class="tabs-nav" id="tabsNav3"></div>
+    <div id="tabsPanels3"></div>
+  </section>
+
+  <section class="block" id="xref3">
+    <h2><span class="num">§VIII</span>Cross-Reference Matrix, Phase III</h2>
+    <table class="xref">
+      <thead><tr><th>Module</th><th>Primary Theme</th><th>Core Concepts</th><th>Textual Anchors</th></tr></thead>
+      <tbody>
+        <tr><td>M9</td><td>Pañcadaśākṣarī Architecture</td><td>Vāgbhava, Kāmarāja, Śakti Kūṭas</td><td>Kūṭa-division per Śrī Vidyā paddhati tradition; LS Pañcadaśākṣarī-svarūpiṇī epithets</td></tr>
+        <tr><td>M10</td><td>Ṣoḍaśī, the 16th Syllable</td><td>Transition from spoken 15 to unspoken transcendent Bindu-syllable</td><td>Lalitha Sahasranāma Ṣoḍaśī-svarūpiṇī tradition; Triśatī\'s Bindu-register names</td></tr>
+        <tr><td>M11</td><td>Triśatī as Mantra-Vigraha</td><td>300 names, 20 per root letter; Hrīm's primacy</td><td>Lalitha Triśatī, full text and Śaṅkarācārya Bhāṣya</td></tr>
+        <tr><td>M12</td><td>Navārṇa &amp; Sonic Warfare</td><td>Aiṃ Hrīṃ Klīṃ Cāmuṇḍāyai Vicce; Hūṃ/Phaṭ as demon-destroying vibration</td><td>Durgā Saptaśatī, Navārṇa Mantra and battle narrative</td></tr>
+        <tr><td>M13</td><td>Siddha Kuñjikā Stotra</td><td>The "key" that renders external ritual unnecessary</td><td>Siddha Kuñjikā Stotra (attached to Saptaśatī corpus), Śiva-Pārvatī framing dialogue</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="block" id="footnotes3">
+    <h2><span class="num">§IX</span>Footnotes — Phase III</h2>
+    <ol class="footnotes" start="16">
+      <li>The threefold Kūṭa division of the Pañcadaśākṣarī (Vāgbhava, Kāmarāja/Madhya, Śakti) is standard across Śrī Vidyā paddhati manuals; syllable-counts given here (5-6-4) follow the widely transmitted Kādi-sequence and will vary slightly under Hādi transmission — noted here as a transmission-variant, not a textual contradiction.</li>
+      <li><span class="evidence-tag tag-flag">Interdisciplinary framing</span> Describing the Kūṭa-division as mapping onto head/heart/base is a common expository convenience in secondary literature on the mantra; it is offered here as an orientation aid rather than as a claim found verbatim in the primary paddhati texts.</li>
+      <li>The Ṣoḍaśī or sixteenth syllable is traditionally treated as secret (rahasya) and transmitted only under advanced initiation (Mahā-Ṣoḍaśī Dīkṣā, see Module 24 forthcoming); this chapter accordingly discusses its structural role and function without reproducing or specifying the syllable itself.</li>
+      <li>Lalitha Triśatī's distribution of twenty names to each of the fifteen root letters, per Śaṅkarācārya's Triśatī Bhāṣya, trans. Swami Tapasyananda, Sri Ramakrishna Math.</li>
+      <li>The concentration of names beginning with Hrīṃ (Hrīṅkārī, Hrīṅmatī, Hrīṅgarbhā) in the Triśatī's Hrīṃ-letter section, illustrating the Māyā-Bīja's structural primacy within the mantra as a whole.</li>
+      <li>Durgā Saptaśatī, Navārṇa Mantra (Aiṃ Hrīṃ Klīṃ Cāmuṇḍāyai Vicce) and its role bracketing recitation of the text; the demon-names Mahiṣāsura, Śumbha, and Niśumbha as narrative correlates, treated further under Module 18's psychodynamic reading (Phase V, forthcoming).</li>
+      <li>Siddha Kuñjikā Stotra, verse in which Śiva tells Pārvatī that the Kuñjikā alone, without kavaca, argalā, or kīlaka, suffices to unlock the Saptaśatī's full effect.</li>
+      <li><span class="evidence-tag tag-synth">Synthetic</span> The claim that the Kuñjikā functions specifically as a compression of the Vaikharī-to-Paśyantī shift proposed in Module 4 — rather than simply as a ritual shortcut — is this chapter's extension of that earlier reading, not a statement made in the Kuñjikā Stotra itself.</li>
+    </ol>
+  </section>
+
+  <section class="block" id="phase-four">
+    <h2><span class="num">§X</span>Phase IV — Microcosmic Mapping &amp; Internal Alchemy (Antaryāga)</h2>
+    <p>Phases I–III worked outward from consciousness to name (Sahasranāma), to diagram (Śrī Cakra), to mantra. Phase IV reverses the direction: it asks how the same Nāda-Bindu-Kalā structure is installed <em>inside</em> the practitioner's own body, so that external worship (Bāhya Yāga) and internal practice (Antaryāga) become two applications of one architecture rather than two different systems.</p>
+    <div class="diagram">SAHASRĀRA (crown) — Amṛta released, lunar matrix liquefies
+      |
+   ĀJÑĀ — Rudra Granthi pierced; Paśyantī register (cf. Module 4)
+      |
+ ANĀHATA/VIŚUDDHA — Viṣṇu Granthi; Madhyamā register
+      |
+ MAṆIPŪRA/SVĀDHIṢṬHĀNA — tissue-deities Dākinī...Yākinī preside
+      |
+MŪLĀDHĀRA (base) — Brahma Granthi; Kuṇḍalinī asleep; Vaikharī register</div>
+    <div class="tabs-nav" id="tabsNav4"></div>
+    <div id="tabsPanels4"></div>
+  </section>
+
+  <section class="block" id="xref4">
+    <h2><span class="num">§XI</span>Cross-Reference Matrix, Phase IV</h2>
+    <table class="xref">
+      <thead><tr><th>Module</th><th>Primary Theme</th><th>Core Concepts</th><th>Textual Anchors</th></tr></thead>
+      <tbody>
+        <tr><td>M14</td><td>Pīṭha-Nāḍī-Cakra Mapping</td><td>Suṣumṇā/Iḍā/Piṅgalā and Śākta Pīṭha geography</td><td>Devī Bhāgavatam Pīṭha references; Ṣaṭ-Cakra correlated to Cakra enclosures</td></tr>
+        <tr><td>M15</td><td>Kuṇḍalinī Ascent</td><td>Three Granthis; lunar liquefaction at Sahasrāra</td><td>LS Mūlādhāraika-nilayā; Brahma-granthi-vibhedinī; Sahasrāra-kambujā</td></tr>
+        <tr><td>M16</td><td>Dākinī–Yākinī Tissue System</td><td>Seven Dhātus governed by seven presiding deities</td><td>Lalitha Sahasranāma internal-deity sequence, Mūlādhāra to Ājñā</td></tr>
+        <tr><td>M17</td><td>Bhūta Śuddhi &amp; Nyāsa</td><td>Elemental dissolution; Mātṛkā/Karāṅga/Ṣoḍhā Nyāsa</td><td>Navāvaraṇa Pūjā paddhati; Khaḍgamālā's internalized equivalent; Part Four of this series (Mātṛkā-Nyāsa)</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="block" id="footnotes4">
+    <h2><span class="num">§XII</span>Footnotes — Phase IV</h2>
+    <ol class="footnotes" start="24">
+      <li>The identification of Suṣumṇā, Iḍā, and Piṅgalā with river-currents draws on a broader Tantric convention linking internal Nāḍīs to the geography of the Śākta Pīṭhas described across the Devī Bhāgavatam and related Pīṭha-nirṇaya literature; treated here as established comparative convention rather than a single-verse citation.</li>
+      <li><span class="evidence-tag tag-flag">Interdisciplinary framing</span> The six-Cakra (Ṣaṭ-Cakra) physiological scheme is drawn primarily from the Ṣaṭ-Cakra-Nirūpaṇa tradition rather than from the five core texts of this chapter directly; it is used here as a widely accepted interpretive bridge between that scheme and the Śrī Cakra's own enclosures.</li>
+      <li>Lalitha Sahasranāma names Mūlādhāraika-nilayā, Brahma-granthi-vibhedinī, and Sahasrāra-kambujā, per Saubhāgyabhāskara, mapping the Kuṇḍalinī's base-residence, first-knot-piercing, and crown-blossoming respectively.</li>
+      <li>The sequence of internal deities from Dākinī (Mūlādhāra) to Yākinī (Ājñā) governing the seven bodily tissues (Dhātus) is drawn from the Lalitha Sahasranāma's dedicated name-cluster on this topic, per Saubhāgyabhāskara.</li>
+      <li>Bhūta Śuddhi as the ritual dissolution of the five gross elements (Earth, Water, Fire, Air, Space) into their subtle causes, preparatory to Nyāsa, is standard across Navāvaraṇa Pūjā paddhati manuals.</li>
+      <li>Mātṛkā Nyāsa, Karāṅga Nyāsa, and Ṣoḍhā Nyāsa as the three principal categories of ritual letter/deity placement on the body; treated in full technical detail already in Part Four of this series ("Mātṛkā-Nyāsa: Encoding Vāk Into the Body"), referenced here rather than re-derived.</li>
+      <li><span class="evidence-tag tag-synth">Synthetic</span> Describing the Devī Khaḍgamālā's recitation as an "internalized equivalent" of full Nyāsa practice — able to substitute for physical ritual placement — is a functional reading proposed in this chapter, extending Module 6's treatment of the Khaḍgamālā as a portable substitute for external Navāvaraṇa Pūjā; the Khaḍgamālā's own text does not explicitly frame itself as a Nyāsa-substitute.</li>
+    </ol>
+  </section>
+
+  <section class="block" id="phase-five">
+    <h2><span class="num">§XIII</span>Phase V — Psychodynamics &amp; Metaphorical Theology</h2>
+    <p>Phases I–IV worked through name, geometry, mantra, and physiology as four registers of one condensation-mechanism. Phase V turns to the Durgā Saptaśatī's narrative register directly: not the Bīja-sounds treated already in Module 12, but the battles themselves, read as a psychological sequence a practitioner\'s own mind is understood to pass through before the Śrī Vidyā practice of Phases I–IV becomes stable.</p>
+    <div class="diagram">MADHU-KAITABHA  →  MAHIṢĀSURA  →  RAKTABĪJA  →  ŚUMBHA-NIŚUMBHA
+   (Tamas,            (Rajas,           (Vikalpa,         (final
+    inertia)           raw ego)          proliferating     duality)
+                                          thought)
+        ↓ each defeat clears a precondition for stable Śrī Vidyā practice ↓
+        MAHĀKĀLĪ  →  MAHĀLAKṢMĪ  →  MAHĀSARASVATĪ
+        (destroys)   (sustains)      (illumines)</div>
+    <div class="tabs-nav" id="tabsNav5"></div>
+    <div id="tabsPanels5"></div>
+  </section>
+
+  <section class="block" id="xref5">
+    <h2><span class="num">§XIV</span>Cross-Reference Matrix, Phase V</h2>
+    <table class="xref">
+      <thead><tr><th>Module</th><th>Primary Theme</th><th>Core Concepts</th><th>Textual Anchors</th></tr></thead>
+      <tbody>
+        <tr><td>M18</td><td>Psychodynamics of the Battles</td><td>Madhu-Kaitabha (Tamas), Mahiṣāsura (Rajas), Raktabīja (Vikalpa)</td><td>Durgā Saptaśatī, Prathama through Uttara Caritra narrative sequence</td></tr>
+        <tr><td>M19</td><td>The Three Caritras</td><td>Mahākālī / Mahālakṣmī / Mahāsarasvatī as destroy-sustain-illumine sequence</td><td>Durgā Saptaśatī macro-structure; correlated to Guṇa triad</td></tr>
+        <tr><td>M20</td><td>Sahasranāma / Triśatī Comparative Study</td><td>Encyclopedic vs. concentrated modes of the same deity-system</td><td>Lalitha Sahasranāma and Lalitha Triśatī read side by side, per Saubhāgyabhāskara on both</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="block" id="footnotes5">
+    <h2><span class="num">§XV</span>Footnotes — Phase V</h2>
+    <ol class="footnotes" start="31">
+      <li>Durgā Saptaśatī, Prathama Caritra: the Madhu-Kaitabha episode, in which Viṣṇu's sleep-bound state is ended by the Goddess so he can act against the two demons; read here, following common exegetical convention, as figuring mental inertia (Tamas) as the first obstacle addressed.</li>
+      <li><span class="evidence-tag tag-synth">Synthetic</span> The specific correlation of Madhu-Kaitabha to Tamas, Mahiṣāsura to Rajas, and Raktabīja to proliferating Vikalpa (discursive thought-forms) is a widely used interpretive convention in secondary Śākta literature; it is treated in this chapter as an inherited synthetic reading rather than a claim stated in those terms within the Saptaśatī text itself, which narrates events rather than naming psychological categories.</li>
+      <li>Durgā Saptaśatī, Madhyama Caritra: the Mahiṣāsura episode and the demon's characteristic shape-shifting, read as narratively encoding the instability of untamed ego rather than a fixed, nameable obstacle.</li>
+      <li>Durgā Saptaśatī, Uttara Caritra: the Raktabīja episode, in which every drop of the demon's blood spawns a duplicate, conventionally read as figuring the self-replicating nature of unexamined thought.</li>
+      <li>The three Caritras' association with Mahākālī, Mahālakṣmī, and Mahāsarasvatī respectively is stated in the Saptaśatī's own traditional framing (the Devī Māhātmya's threefold division), rather than being this chapter's proposal.</li>
+      <li><span class="evidence-tag tag-flag">Interdisciplinary framing</span> Correlating the destroy–sustain–illumine sequence of the three Caritras with the Sāṃkhya Guṇa triad (Tamas–Rajas–Sattva) is a comparative convenience used across secondary literature on Śākta philosophy; it is not a terminology used within the Saptaśatī itself.</li>
+      <li>Comparative reading of Lalitha Sahasranāma and Lalitha Triśatī structure and shared names (Kāmeśvarī, Lalitā, Tripurasundarī), per Bhāskararāya Makhin's commentaries on both texts (Saubhāgyabhāskara for the Sahasranāma; his Triśatī commentary separately).</li>
+    </ol>
+  </section>
+
+  <section class="block" id="phase-six">
+    <h2><span class="num">§XVI</span>Phase VI — Advanced Integrations &amp; Comparative Realization</h2>
+    <p>The final phase moves in three steps: first, from external ritual to pure internalization (Module 21); then outward again into two interdisciplinary extensions — neuro-acoustics and cymatics (Modules 22–23) — offered explicitly as heuristic rather than textual scholarship; then to the ethical and transmission framework that governs all of the preceding material (Module 24); and finally to the chapter's own synthesis (Module 25).</p>
+    <div class="tabs-nav" id="tabsNav6"></div>
+    <div id="tabsPanels6"></div>
+  </section>
+
+  <section class="block" id="xref6">
+    <h2><span class="num">§XVII</span>Cross-Reference Matrix, Phase VI</h2>
+    <table class="xref">
+      <thead><tr><th>Module</th><th>Primary Theme</th><th>Core Concepts</th><th>Textual Anchors</th></tr></thead>
+      <tbody>
+        <tr><td>M21</td><td>Bāhya Yāga vs. Antar Yāga</td><td>Kaulācāra vs. Samayācāra; Bhavanopaniṣad's internal mapping</td><td>Bhavanopaniṣad; LS Antarmukha-samārādhyā / Bahirmukha-sudurlabhā</td></tr>
+        <tr><td>M22</td><td>Neuro-Acoustic Science</td><td>Phoneme articulation, cranial nerve stimulation, vibrational entrainment</td><td>Interdisciplinary extension only — no direct canon citation</td></tr>
+        <tr><td>M23</td><td>Cymatics &amp; Yantra</td><td>Wave phenomena organizing matter into geometric pattern</td><td>Interdisciplinary extension only — analogical to Module 5's geometry</td></tr>
+        <tr><td>M24</td><td>Dīkṣā, Paramparā, Ethics</td><td>Guru-Mukhi Vidyā; Bālā/Pañcadaśī/Mahā-Ṣoḍaśī Dīkṣā; Yama-Niyama</td><td>Standard Śrī Vidyā paddhati and lineage transmission literature</td></tr>
+        <tr><td>M25</td><td>Synthesis — Ātma-rūpā</td><td>Nāda, Bindu, Yantra converging in Self-recognition</td><td>LS climax name Ātma-rūpā; full five-text canon in retrospect</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="block" id="footnotes6">
+    <h2><span class="num">§XVIII</span>Footnotes — Phase VI</h2>
+    <ol class="footnotes" start="38">
+      <li>Kaulācāra (structured external worship with physical ritual materials) and Samayācāra (purely internal meditation) as the two principal orientations within Śrī Vidyā practice; the distinction is standard across Śrī Vidyā doctrinal literature rather than specific to any one of the five core texts.</li>
+      <li>Bhavanopaniṣad, mapping each element of external Navāvaraṇa ritual worship to a corresponding internal state of consciousness or physiological function — treated here as the primary textual bridge for the Kaulācāra-to-Samayācāra transition.</li>
+      <li>Lalitha Sahasranāma names Antarmukha-samārādhyā ("worshipped by those whose gaze is inward") and Bahirmukha-sudurlabhā ("difficult to reach by those turned outward"), per Saubhāgyabhāskara, read as a direct textual endorsement of the Samayācāra orientation over external distraction.</li>
+      <li><span class="evidence-tag tag-flag">Interdisciplinary extension</span> Module 22's claims about cranial nerve stimulation via Sanskrit phoneme articulation and vibrational entrainment shifting brainwave states are offered as heuristic analogy connecting traditional mantra-practice to contemporary neuro-acoustic research; they are not derived from or attributed to the five core texts, which make no neurophysiological claims of this kind.</li>
+      <li><span class="evidence-tag tag-flag">Interdisciplinary extension</span> Module 23's cymatic framing — that high-frequency sound organizes matter into geometric pattern, offered as a physical analogy for how Mantra might relate to Yantra — is drawn from Hans Jenny's cymatics research and is explicitly analogical rather than a claim the tradition itself makes about physical acoustics.</li>
+      <li>The three-stage initiation sequence — Bālā Dīkṣā, Pañcadaśī Dīkṣā, and Mahā-Ṣoḍaśī Dīkṣā — and the requirement of Guru-Mukhi Vidyā (direct oral transmission) as opposed to independent textual study, are standard across Śrī Vidyā lineage literature.</li>
+      <li>Lalitha Sahasranāma's climax name Ātma-rūpā ("she whose form is the individual Self"), per Saubhāgyabhāskara, read as the text's own terminus: the entire preceding 999 names converging on the identity of the worshipped deity and the practitioner's own consciousness.</li>
+    </ol>
+  </section>
+
+  <section class="block" id="synthesis">
+    <h2><span class="num">§XIX</span>Closing Synthesis</h2>
+    <p class="lede">Twenty-five modules, six phases, five texts, one recurring move: cosmic resonance condenses to a point, and that point opens into name, geometry, mantra, physiology, or narrative, depending only on which register is being read. Phase I established Nāda-Bindu-Kalā as that move in the abstract. Phase II drew it as the Śrī Cakra. Phase III spoke it as the Pañcadaśākṣarī and its Triśatī expansion. Phase IV installed it in the body via Kuṇḍalinī ascent and Nyāsa. Phase V narrated it as the Saptaśatī's battles and the Sahasranāma/Triśatī comparison. Phase VI has now folded external ritual back into internal awareness, offered two interdisciplinary analogies for why the tradition's own claims about sound and geometry might be worth taking seriously on their own terms, stated the ethical conditions under which any of this material should be transmitted, and arrived at the Lalitha Sahasranāma's own final claim: that the deity so elaborately named, diagrammed, chanted, and embodied across a thousand names is, at the point of realization, identical with the practitioner's own Self — <span class="skt-inline">Ātma-rūpā</span>.</p>
+    <p>This is offered as the chapter's structural conclusion rather than as a devotional claim requiring the reader's assent: whatever one's own relationship to the tradition's theology, the five-text canon examined here demonstrates a genuinely rigorous internal consistency — the same triadic condensation, verifiably, in five different literary registers — which is itself the primary scholarly finding this chapter set out to establish.</p>
+    <span class="evidence-tag tag-canon">Full canon, in retrospect</span>
+    <p>Lalitha Sahasranāma (nominal register, Phases I, IV, V) · Devī Khaḍgamālā (procedural register, Phases II, IV) · Lalitha Triśatī (phonemic register, Phases II, III, V) · Durgā Saptaśatī (narrative register, Phases I, III, V) · Devī Bhāgavatam (theological register, Phases I, II).</p>
+  </section>
+
+</main>
+
+<footer>
+  Cultural Musings · Pramātṛ–Prameya Series A Extended · Part Six, complete — Phases I–VI (§0–§XIX), Modules 1–25 · shastrasextvak.culturalmusings.com<br>
+  Evidentiary tiers used throughout: <span class="evidence-tag tag-canon">Canon &amp; Commentary</span> <span class="evidence-tag tag-synth">Synthetic Cross-Reading</span> <span class="evidence-tag tag-flag">Interdisciplinary Extension</span>
+</footer>
+
+<script>
+const modules = [
+  {
+    id:'m1',
+    label:'M1 · Parā-Śakti',
+    focus:'The monistic-theistic foundation of Śākta Tantra',
+    lakshana:'Parā-Śakti is defined as Parā-Citti — consciousness that is simultaneously absolute (nirguṇa) and personally addressable (saguṇa) without contradiction. Śiva names its static, illuminating aspect (Prakāśa); Śakti names its dynamic, self-reflective aspect (Vimarśa). Neither is prior; the pair is stated as strictly non-dual.',
+    prakriya:'The Devī Gītā portion of the Devī Bhāgavatam works this distinction procedurally: the Goddess speaks in first person as both the formless ground and the specific interlocutor of the dialogue, modeling for the reader how the two registers are meant to be held together rather than resolved into one. The Kādi and Hādi lineages are traditionally distinguished by which sage-transmission (Kāma/Manmatha or Agastya) and which syllable-ordering of the root mantra they preserve — a difference in transmission-line and mantra sequence, not in underlying doctrine.',
+    udaharana:'Lalitha Sahasranāma opens, not incidentally, with <span class="skt-inline">Śrī Mātā</span> — "the Auspicious Mother" — before any attribute, action, or location is assigned to the deity. Bhāskararāya\'s Saubhāgyabhāskara glosses this as establishing causal priority: everything named in the following 999 names is read as unfolding from this first, unqualified relation.',
+    phala:'For the practitioner, the fruit of this module is definitional discipline: every subsequent claim in the chapter — about geometry, mantra, or physiology — is read as an elaboration of the Śiva–Śakti relation established here, not as an independent doctrine. It also sets the chapter\'s citation standard: distinguishing what a name <em>states</em> from what later commentary <em>infers</em>.'
+  },
+  {
+    id:'m2',
+    label:'M2 · The Fivefold Canon',
+    focus:'Register-mapping across five distinct text-types',
+    lakshana:'The five source texts are not interchangeable retellings of one doctrine; each is a different genre operating on the same substrate. The Sahasranāma is nominal (a list of names), the Khaḍgamālā is procedural (a worship-sequence), the Triśatī is phonemic (a name-set organized by syllable), the Saptaśatī is narrative (a myth-cycle), and the Devī Bhāgavatam is theological-cosmological (a doctrinal frame).',
+    prakriya:'The working method of this chapter is to read each module\'s topic across all five registers deliberately, rather than defaulting to whichever text states a point most conveniently. Where two texts appear to diverge — for instance, the Sahasranāma\'s static central Bindu versus the Saptaśatī\'s dynamic battle-sequence — the divergence is treated as two genres describing one structure, not as a doctrinal conflict requiring resolution.',
+    udaharana:'The nine enclosures of the Śrī Cakra (developed fully in Phase II) appear nominally in Sahasranāma epithets tied to each Āvaraṇa, procedurally in the Khaḍgamālā\'s invocation-order, and cosmologically in the Devī Bhāgavatam\'s description of Maṇidvīpa — three depictions of the same nine-part structure in three different literary modes.',
+    phala:'This module functions as the chapter\'s methodological hinge: it is what licenses reading five genre-distinct texts as a single corpus in the modules that follow, and it is stated early precisely so later cross-references do not need to re-justify the comparison each time.'
+  },
+  {
+    id:'m3',
+    label:'M3 · Nāda-Bindu-Kalā',
+    focus:'The esoteric triad of cosmogenesis',
+    lakshana:'Nāda is cosmic resonance prior to any specific sound; Bindu is the concentrated point at which that resonance stabilizes into potential form; Kalā is the manifest ray or attribute released when the Bindu opens. The triad describes a single continuous condensation, not three separate substances.',
+    prakriya:'<span class="skt-inline">Nāda</span> arises, per this framework, from the first responsive movement of Śakti against the ground of Śiva — described as vibration rather than sound-as-heard. This stabilizes into <span class="skt-inline">Bindu</span>, read as the union of Prakāśa and Vimarśa in a single point holding all subsequent form in potential. <span class="skt-inline">Kalā</span> is what is released when that point differentiates — the specific attributes, deities, and elements that populate the Śrī Cakra\'s outer enclosures.',
+    udaharana:'LS Name 904, <span class="skt-inline">Nāda-rūpā</span> ("she whose very form is sound"), is read together with LS Name 380, <span class="skt-inline">Bindu-maṇḍala-vāsinī</span> ("she who dwells in the circle of the Bindu") — the first naming the resonant phase, the second the condensed phase of the same triad. The Lalitha Triśatī\'s verses on <span class="skt-inline">Hrīṅkāra-nyāsa-rūpiṇī</span> extend the sequence into Kalā, describing the seed-syllable Hrīm as the vehicle by which the Bindu opens into the triangular Kāmakalā form (treated fully in Module 7).',
+    phala:'This triad is the chapter\'s central analytic tool. Every later module — the Cakra\'s geometry, the mantra\'s syllables, the Saptaśatī\'s battles — is read as one more instance of Nāda condensing to Bindu and opening into Kalā, which is what allows twenty-five otherwise disparate topics to be presented as a single argument rather than a topic list.'
+  },
+  {
+    id:'m4',
+    label:'M4 · Vāk-Catuṣṭaya &amp; Sphoṭa',
+    focus:'How divine intention condenses into spoken language',
+    lakshana:'The four levels of speech — Parā (unmanifest), Paśyantī (visionary), Madhyamā (internal, discursive), and Vaikharī (physically articulated) — describe the same condensation traced in Module 3, applied specifically to language. Bhartṛhari\'s Sphoṭa theory, established in Part Two of this series, supplies the linguistic mechanism: meaning is grasped as a sudden, non-sequential flash (sphoṭa) rather than assembled piece by piece from individual phonemes.',
+    prakriya:'Read against the Nāda-Bindu-Kalā triad, Parā and Paśyantī correspond to the Nāda phase (sound prior to or at the threshold of differentiation), Madhyamā to the stabilizing Bindu-like moment where meaning is fixed but not yet spoken, and Vaikharī to Kalā, the fully manifest, audible ray.',
+    udaharana:'<span class="evidence-tag tag-synth">Synthetic</span> The Durgā Saptaśatī\'s dense wrathful Bīja-clusters — Dūm, Hrīm, Klīm — are proposed in this chapter as functioning to pull the practitioner\'s attention from Vaikharī (the physically chanted syllable) back toward Paśyantī (the pre-verbal visionary flash) precisely because their sound exceeds ordinary discursive meaning; this reading applies Bhartṛharian vocabulary to the Saptaśatī, which does not itself use these terms.',
+    phala:'This module closes Phase I by re-anchoring the entire chapter to Part Two\'s Sphoṭa work, making explicit that Śrī Vidyā Sādhana is read here as a ritual application of a linguistic theory already established, rather than as an unrelated new doctrine — the throughline that phases II–VI will develop into geometry, mantra, physiology, myth, and finally synthesis.'
+  }
+];
+
+const nav = document.getElementById('tabsNav');
+const panels = document.getElementById('tabsPanels');
+
+modules.forEach((m, i) => {
+  const btn = document.createElement('button');
+  btn.className = 'tab-btn' + (i===0 ? ' active' : '');
+  btn.textContent = m.label;
+  btn.dataset.target = m.id;
+  btn.onclick = () => {
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(m.id).classList.add('active');
+  };
+  nav.appendChild(btn);
+
+  const panel = document.createElement('div');
+  panel.className = 'tab-panel' + (i===0 ? ' active' : '');
+  panel.id = m.id;
+  panel.innerHTML = `
+    <div class="module-focus">${m.focus}</div>
+    <div class="lpup-grid">
+      <div class="lpup-card"><h4>Lakṣaṇa — Definition</h4><p>${m.lakshana}</p></div>
+      <div class="lpup-card"><h4>Prakriyā — Process</h4><p>${m.prakriya}</p></div>
+      <div class="lpup-card"><h4>Udāharaṇa — Textual Evidence</h4><p>${m.udaharana}</p></div>
+      <div class="lpup-card"><h4>Phala — Import</h4><p>${m.phala}</p></div>
+    </div>
+  `;
+  panels.appendChild(panel);
+});
+
+const modules2 = [
+  {
+    id:'m5',
+    label:'M5 · Śrī Cakra Geometry',
+    focus:'Mathematical and symbolic anatomy of the nine enclosures',
+    lakshana:'The Śrī Cakra (or Śrī Yantra) is defined as nine concentric enclosures (Āvaraṇas) built from the interlock of four upward-pointing triangles (Śiva, static awareness) and five downward-pointing triangles (Śakti, dynamic power), enclosed by lotus-petal rings and a square Bhūpura, with the Bindu at the absolute centre.',
+    prakriya:'Read against Module 3\'s triad, the diagram is the Nāda-Bindu-Kalā sequence made visible: the Bindu is the geometric point of undifferentiated potential; the central triangle is the first opening into Kalā (treated fully as Kāmakalā in Module 7); each successive ring outward — the inner and outer sets of ten triangles, the fourteen-triangle enclosure, the two lotus rings, and finally the Bhūpura — is a further stage of manifest differentiation, moving from the subtlest attributes toward the physical ritual ground itself.',
+    udaharana:'The Devī Khaḍgamālā Stotram supplies the procedural confirmation of this reading: its invocation order does not move randomly through the diagram but walks outward (or inward, in the return sequence) enclosure by enclosure, naming the specific Yoginīs presiding over each tier — evidence that the geometry was always meant to be read as a sequence, not only viewed as a static image.',
+    phala:'This module supplies the spatial vocabulary — Bhūpura, petal-rings, triangle-enclosures, Bindu — that Modules 6 through 8 will each use from a different angle: Module 6 as ritual sequence, Module 7 as the innermost triangle in isolation, Module 8 as the same structure projected onto a Purāṇic cosmography.'
+  },
+  {
+    id:'m6',
+    label:'M6 · Khaḍgamālā Anatomy',
+    focus:'The "Garland of Swords" as ritual roadmap',
+    lakshana:'Khaḍga means sword; the stotram\'s title identifies itself as a garland of discriminative weapons rather than a simple prayer. Each name invoked functions as a Viveka-instrument, cutting through a specific layer of egoism (Āṇava Mala) as the practitioner\'s attention is walked through the Cakra.',
+    prakriya:'The sequence moves through three broad tiers of Yoginīs — commonly grouped as Khecarī (sky-moving, associated with the upper/subtler enclosures), Bhūcarī (earth-moving, associated with the outer enclosures), and the Dīkṣā or Rahasya Yoginīs guarding the innermost triangles — mirroring the outward-to-inward geometric reading established in Module 5.',
+    udaharana:'<span class="evidence-tag tag-synth">Synthetic</span> The comparative table proposed in this chapter, aligning the Khaḍgamālā\'s step-by-step Yoginī invocations with the interior-chamber narrative of the Lalītopākhyāna in the Brahmāṇḍa Purāṇa, is offered as a structural parallel — both texts describe a movement inward through guarded tiers toward a central seat — rather than as a traditionally established cross-index between the two works.',
+    phala:'For a practitioner or reader, the fruit of this module is recognizing the Khaḍgamālā as a compressed, portable substitute for full external Navāvaraṇa Pūjā: reciting the correct name-sequence is traditionally held to retrace the same inward geometric movement without requiring the physical ritual apparatus.'
+  },
+  {
+    id:'m7',
+    label:'M7 · Kāmakalā Vilāsa',
+    focus:'The divine triad at the heart of the central triangle',
+    lakshana:'Kāmakalā names the specific configuration of three Bindus that forms the Śrī Cakra\'s central triangle: a white Bindu at the apex (identified with Śiva, Prakāśa) and two red Bindus at the base (identified with Śakti, Vimarśa), together read as the point where Module 3\'s Bindu first opens into Kalā.',
+    prakriya:'This is presented as the geometric minimum of manifestation — the smallest possible structure that is no longer a single undifferentiated point but is also not yet the full nine-enclosure Cakra. Its phonetic counterpart is the Sanskrit vowel Ē (ए), itself historically analyzed as a compound of A and I, and represented in mantra transliteration by the Ardhacandra (half-moon) mark — a written sign for a phonetic compound standing in for a geometric compound.',
+    udaharana:'Lalitha Sahasranāma\'s epithet Kāmakalā-rūpā ("she whose form is Kāmakalā") is read together with the Lalitha Triśatī\'s expanded treatment of the same triad across its verse-clusters, per Saubhāgyabhāskara and the Triśatī Bhāṣya respectively — the Sahasranāma naming the form, the Triśatī elaborating its phonemic correlate.',
+    phala:'Understanding Kāmakalā as the innermost triangle, rather than as a separate esoteric topic, prevents the common error of treating it as disconnected from the Cakra\'s outer geometry: it is Module 5\'s diagram viewed at maximum magnification, and Module 3\'s Bindu caught in the exact instant of opening.'
+  },
+  {
+    id:'m8',
+    label:'M8 · Maṇidvīpa',
+    focus:'Purāṇic cosmography as a projected blueprint',
+    lakshana:'Maṇidvīpa, "the Island of Jewels," is described in the Devī Bhāgavatam as the supreme abode of Tripurasundarī — a cosmological location with its own concentric geography of oceans, groves, and enclosures, distinct in genre from the geometric Śrī Cakra but treated in this chapter as its narrative-cosmographic counterpart.',
+    prakriya:'Where Module 5 gave the Cakra as an abstract diagram and Module 7 gave its innermost point in isolation, Maṇidvīpa gives the same structure narrated as a place one could travel through — concentric rings of ocean and forest standing in for the concentric triangle- and petal-enclosures, with the Goddess\'s throne at the centre standing in for the Bindu.',
+    udaharana:'<span class="evidence-tag tag-synth">Synthetic</span> The proposal that Maṇidvīpa\'s concentric layout is a cosmographic projection of the Navāvaraṇa, enclosure-for-enclosure, is a comparative reading offered in this chapter. The Devī Bhāgavatam\'s Maṇidvīpa-varṇana describes its own geography in its own terms and does not explicitly equate its rings with the Śrī Cakra\'s triangles and lotuses; the correspondence proposed here is structural and thematic, not a textually stated identity.',
+    phala:'Placed at the close of Phase II, this module demonstrates the same Nāda–Bindu–Kalā condensation appearing in a third literary register — after the nominal (Sahasranāma, Module 3) and the geometric (Śrī Cakra, Module 5) — this time as sacred narrative geography, setting up Phase III\'s move into the fourth register: mantra and syllable.'
+  }
+];
+
+const nav2 = document.getElementById('tabsNav2');
+const panels2 = document.getElementById('tabsPanels2');
+
+modules2.forEach((m, i) => {
+  const btn = document.createElement('button');
+  btn.className = 'tab-btn' + (i===0 ? ' active' : '');
+  btn.textContent = m.label;
+  btn.onclick = () => {
+    nav2.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    panels2.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(m.id).classList.add('active');
+  };
+  nav2.appendChild(btn);
+
+  const panel = document.createElement('div');
+  panel.className = 'tab-panel' + (i===0 ? ' active' : '');
+  panel.id = m.id;
+  panel.innerHTML = `
+    <div class="module-focus">${m.focus}</div>
+    <div class="lpup-grid">
+      <div class="lpup-card"><h4>Lakṣaṇa — Definition</h4><p>${m.lakshana}</p></div>
+      <div class="lpup-card"><h4>Prakriyā — Process</h4><p>${m.prakriya}</p></div>
+      <div class="lpup-card"><h4>Udāharaṇa — Textual Evidence</h4><p>${m.udaharana}</p></div>
+      <div class="lpup-card"><h4>Phala — Import</h4><p>${m.phala}</p></div>
+    </div>
+  `;
+  panels2.appendChild(panel);
+});
+
+const modules3 = [
+  {
+    id:'m9',
+    label:'M9 · Pañcadaśākṣarī',
+    focus:'The 15-syllable root mantra as structural mirror of the Cakra',
+    lakshana:'The Pañcadaśākṣarī divides into three Kūṭas (peaks or segments): the Vāgbhava Kūṭa governing intellect and speech, the Kāmarāja (Madhya) Kūṭa governing preservation and vitality, and the Śakti Kūṭa governing dissolution and transcendence — a threefold division read here as the phonemic counterpart to the Śiva/Śakti triangle-interlock of Module 5.',
+    prakriya:'Each Kūṭa is itself built from ordinary phonemes plus a closing Bīja (typically Hrīṃ), so that the mantra is not a random string but a structured composite: everyday sound-units (Vaikharī, per Module 4) organized around three seed-points (echoing Bindu, per Module 3), each seed-point opening outward into its Kūṭa\'s specific function (Kalā).',
+    udaharana:'Lalitha Sahasranāma epithets identifying the Goddess as inseparable from the Pañcadaśākṣarī\'s own syllabic form are read per Saubhāgyabhāskara as establishing Mantra-Vigraha — the doctrine, developed fully in Module 11, that the mantra\'s sound is not a symbol pointing at the deity but the deity\'s literal acoustic body.',
+    phala:'Recognizing the three-Kūṭa architecture prevents treating the mantra as an undifferentiated string to be repeated mechanically; each Kūṭa is traditionally held to govern a distinct register of the practitioner\'s experience, which is why Module 10 can then locate a further, sixteenth register beyond all three.'
+  },
+  {
+    id:'m10',
+    label:'M10 · Ṣoḍaśī',
+    focus:'The transcendental sixteenth syllable',
+    lakshana:'Beyond the fifteen spoken syllables lies a sixteenth, traditionally kept secret and transmitted only under advanced initiation. It is not an addition to the mantra\'s length so much as a marker of what the fifteen syllables already presuppose but cannot themselves voice: the Bindu from which all fifteen proceed.',
+    prakriya:'Where Modules 3 and 7 located Bindu geometrically at the Cakra\'s centre, Module 10 locates its phonemic equivalent: a syllable that is less an additional sound than the silence framing all the others, sometimes represented by the Ardhacandra (half-moon) notation encountered already in Module 7\'s treatment of Kāmakalā.',
+    udaharana:'Because this syllable is transmitted only under Mahā-Ṣoḍaśī Dīkṣā (see Module 24, forthcoming), this chapter follows the standard scholarly convention of discussing its structural role and its relationship to the fifteen spoken Kūṭas without reproducing or specifying the syllable itself.',
+    phala:'The fruit of this module is a precise statement of what "transcending the mantra" means in this tradition: not abandoning the fifteen syllables, but recognizing the silent sixteenth they already imply — the same move, in miniature, that Module 17\'s Samayācāra will later make at the level of an entire practice (external ritual understood as always already pointing at its own internal, wordless completion).'
+  },
+  {
+    id:'m11',
+    label:'M11 · Triśatī as Mantra-Vigraha',
+    focus:'The 300 names as the mantra\'s expanded acoustic body',
+    lakshana:'Mantra-Vigraha is the doctrine that a mantra\'s sound-form and the deity\'s form are identical, not merely correlated. The Lalitha Triśatī operationalizes this doctrine structurally: its three hundred names are organized so that exactly twenty are assigned to each of the Pañcadaśākṣarī\'s fifteen root letters.',
+    prakriya:'Read this way, the Triśatī functions as an expansion-key for the compressed mantra treated in Module 9: where the Pañcadaśākṣarī gives fifteen syllables in their minimal ritual form, the Triśatī unpacks each syllable into twenty named attributes, effectively performing in reverse the condensation described in Module 3 (Kalā opened back out from what had condensed toward Bindu).',
+    udaharana:'The cluster of names beginning with Hrīṃ — Hrīṅkārī, Hrīṅmatī, Hrīṅgarbhā — occupies a correspondingly weighted position within this scheme, read as textual confirmation of the Māyā-Bīja\'s primacy already noted in Module 3\'s treatment of Bindu-maṇḍala-vāsinī.',
+    phala:'This module closes the direct three-way link between Sahasranāma (Phase I\'s nominal register), Śrī Cakra (Phase II\'s geometric register), and now Triśatī (this phase\'s phonemic register): three different enumerative systems shown to encode the same underlying structure at different resolutions.'
+  },
+  {
+    id:'m12',
+    label:'M12 · Navārṇa &amp; Sonic Warfare',
+    focus:'Wrathful sound as the Saptaśatī\'s register of the same triad',
+    lakshana:'The Navārṇa Mantra — Aiṃ Hrīṃ Klīṃ Cāmuṇḍāyai Vicce — frames recitation of the Durgā Saptaśatī and is read in this chapter as the martial-narrative register\'s equivalent of the Pañcadaśākṣarī: a compressed formula standing in for an entire textual and cosmological structure, exactly as Module 9\'s mantra stands in for the Cakra.',
+    prakriya:'Where the Pañcadaśākṣarī\'s register is meditative and its Bījas relatively gentle (Hrīṃ), the Saptaśatī deploys harsher acoustic units — Hūṃ, Phaṭ, and the Uccaṭana (expulsion) class of sound — narratively correlated with the destruction of specific demon-figures (Mahiṣāsura, Śumbha, Niśumbha).',
+    udaharana:'This chapter treats these demon-battles primarily as evidence of a distinct sonic register within the same five-text canon; their fuller psychological reading — Mahiṣāsura as untamed Rajas, Raktabīja as proliferating Vikalpa — is deferred to Module 18 in Phase V, where the narrative-psychodynamic analysis proper belongs.',
+    phala:'Placing the Navārṇa Mantra directly after the Pañcadaśākṣarī and Triśatī demonstrates that the fivefold canon is not split between a "gentle" Śrī Vidyā register and a "fierce" Saptaśatī register as separate systems, but uses the same Nāda-Bindu-Kalā mechanics under two different narrative and emotional keys.'
+  },
+  {
+    id:'m13',
+    label:'M13 · Siddha Kuñjikā',
+    focus:'The single key that renders the outer apparatus unnecessary',
+    lakshana:'The Siddha Kuñjikā Stotra presents itself, in Śiva\'s own words to Pārvatī, as sufficient on its own to unlock the Saptaśatī\'s full power — without the accompanying kavaca (armor), argalā (bolt), or kīlaka (pin) texts ordinarily recited alongside it.',
+    prakriya:'Structurally, the Kuñjikā is a dense, rapid sequence of Bījas with minimal narrative content — closer in form to the Pañcadaśākṣarī\'s compressed syllable-string (Module 9) than to the Saptaśatī\'s extended demon-narratives (Module 12), despite belonging to the Saptaśatī corpus.',
+    udaharana:'<span class="evidence-tag tag-synth">Synthetic</span> This chapter proposes reading the Kuñjikā\'s function as a compression of the Vaikharī-to-Paśyantī shift already proposed in Module 4: its density of seed-syllables, largely without discursive meaning, is suggested to work by short-circuiting Vaikharī\'s ordinary discursive processing rather than by extending it — a functional reading, not a claim made in the Stotra\'s own text, which frames its efficacy in terms of Śiva\'s authority rather than psycholinguistic mechanism.',
+    phala:'Closing Phase III with the Kuñjikā underscores this phase\'s central argument: across the meditative Pañcadaśākṣarī, the expansive Triśatī, the martial Navārṇa, and the compressed Kuñjikā, four structurally different mantra-forms are read as four expressions of one condensation-mechanism, setting up Phase IV\'s turn from external mantra to internal physiological practice.'
+  }
+];
+
+const nav3 = document.getElementById('tabsNav3');
+const panels3 = document.getElementById('tabsPanels3');
+
+modules3.forEach((m, i) => {
+  const btn = document.createElement('button');
+  btn.className = 'tab-btn' + (i===0 ? ' active' : '');
+  btn.textContent = m.label;
+  btn.onclick = () => {
+    nav3.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    panels3.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(m.id).classList.add('active');
+  };
+  nav3.appendChild(btn);
+
+  const panel = document.createElement('div');
+  panel.className = 'tab-panel' + (i===0 ? ' active' : '');
+  panel.id = m.id;
+  panel.innerHTML = `
+    <div class="module-focus">${m.focus}</div>
+    <div class="lpup-grid">
+      <div class="lpup-card"><h4>Lakṣaṇa — Definition</h4><p>${m.lakshana}</p></div>
+      <div class="lpup-card"><h4>Prakriyā — Process</h4><p>${m.prakriya}</p></div>
+      <div class="lpup-card"><h4>Udāharaṇa — Textual Evidence</h4><p>${m.udaharana}</p></div>
+      <div class="lpup-card"><h4>Phala — Import</h4><p>${m.phala}</p></div>
+    </div>
+  `;
+  panels3.appendChild(panel);
+});
+
+const modules4 = [
+  {
+    id:'m14',
+    label:'M14 · Pīṭha-Nāḍī-Cakra',
+    focus:'Mapping the body\'s energetic anatomy onto sacred geography',
+    lakshana:'The central channel (Suṣumṇā) and its two flanking channels (Iḍā, left; Piṅgalā, right) are read as the physiological counterpart to a wider geography of Śākta Pīṭhas — power-sites distributed across the subcontinent and enumerated in the Devī Bhāgavatam and related Pīṭha-nirṇaya literature.',
+    prakriya:'The correlation runs in both directions: the body is read as a map of the sacred landscape in miniature, and the landscape is read as the body\'s anatomy projected outward — the same inside/outside reversal that will organize this entire phase, culminating in Module 17\'s Nyāsa, where external mantra-syllables are placed back onto the internal body.',
+    udaharana:'<span class="evidence-tag tag-flag">Interdisciplinary framing</span> The six-Cakra (Ṣaṭ-Cakra) scheme commonly used to organize this correlation is drawn from the Ṣaṭ-Cakra-Nirūpaṇa tradition rather than stated explicitly in the five core texts of this chapter; it is used here as an interpretive bridge, correlated against the Śrī Cakra\'s own nine enclosures established in Module 5.',
+    phala:'This module supplies the physiological vocabulary — Suṣumṇā, the six Cakras, the Pīṭha correlation — that Modules 15 through 17 will each apply from a different angle: ascent, tissue-governance, and ritual purification respectively.'
+  },
+  {
+    id:'m15',
+    label:'M15 · Kuṇḍalinī Ascent',
+    focus:'The internal ritual (Antaryāga) in which the coiled force pierces upward',
+    lakshana:'Kuṇḍalinī\'s ascent through the Nāḍī described in Module 14 is structured around the piercing of three energetic knots (Granthis) — Brahma Granthi at the base (physical attachment), Viṣṇu Granthi at the heart (emotional attachment), and Rudra Granthi at the brow (intellectual/spiritual attachment) — culminating in liquefaction of a lunar matrix at the crown and the release of Amṛta, the nectar of immortality, back down through the system.',
+    prakriya:'Read against the Vāk-Catuṣṭaya established in Module 4, the base-to-crown ascent tracks the Vaikharī-to-Parā sequence in physiological terms: the Brahma Granthi corresponds to speech still bound to gross articulation, the Rudra Granthi to the threshold of Paśyantī, and the crown liquefaction to the silent, unmanifest Parā register.',
+    udaharana:'Lalitha Sahasranāma names Mūlādhāraika-nilayā ("she who resides in the base"), Brahma-granthi-vibhedinī ("she who pierces the first knot"), and Sahasrāra-kambujā ("she who blooms as the lotus of the crown") are read per Saubhāgyabhāskara as a three-stage narrative sequence embedded directly in the name-list, rather than as three unrelated epithets.',
+    phala:'This module makes explicit that Kuṇḍalinī ascent, as treated in this five-text canon, is not a freestanding yogic technique appended to Śrī Vidyā but a physiological restatement of the same Vāk-Catuṣṭaya sequence already established in Phase I — the crown-liquefaction being, structurally, another arrival at the Bindu-register first defined in Module 3.'
+  },
+  {
+    id:'m16',
+    label:'M16 · Dākinī–Yākinī',
+    focus:'The Sahasranāma\'s system of tissue-governing deities',
+    lakshana:'A dedicated sequence of internal deities — beginning with Dākinī at the Mūlādhāra and ending with Yākinī at the Ājñā — is named in the Lalitha Sahasranāma as presiding over the seven bodily tissues (Dhātus), giving the abstract Cakra-ascent of Module 15 a specific physiological substrate.',
+    prakriya:'Each deity in the sequence is read as governing both a Cakra location (per Module 14\'s mapping) and a corresponding bodily tissue, so that the ascent traced in Module 15 is simultaneously an energetic, a geographic, and a biological narrative — three registers converging on the same seven-stage sequence.',
+    udaharana:'The Sahasranāma\'s presentation of this deity-cluster in unbroken sequence, per Saubhāgyabhāskara, is treated as textual confirmation that the seven names were composed as a deliberate ordered set correlated to the ascent, rather than as scattered independent epithets that happen to share a theme.',
+    phala:'This module demonstrates the chapter\'s recurring pattern one further time: an apparently narrow topic (naming deities of bodily tissue) turns out, on close reading, to encode the same base-to-crown structural sequence already established twice over in Modules 14 and 15, reinforcing that the Sahasranāma\'s list-form is not incidental to its content.'
+  },
+  {
+    id:'m17',
+    label:'M17 · Bhūta Śuddhi &amp; Nyāsa',
+    focus:'Purifying the elements and installing sound onto the body',
+    lakshana:'Bhūta Śuddhi is the ritual dissolution of the five gross elements (Earth, Water, Fire, Air, Space) back into their subtle causes, clearing the ground for Nyāsa — the ritual placement of mantric letters, phrases, and deities onto specific points of the body (Mātṛkā Nyāsa, Karāṅga Nyāsa, Ṣoḍhā Nyāsa).',
+    prakriya:'Nyāsa is the phase\'s culminating move: it takes the mantra-syllables established in Phase III and installs them directly onto the body mapped in Modules 14–16, closing the loop between the outward-facing worship of Phases II–III and the inward-facing physiology of this phase. The full technical mechanics of Mātṛkā Nyāsa specifically were developed at length in Part Four of this series and are referenced here rather than re-derived.',
+    udaharana:'<span class="evidence-tag tag-synth">Synthetic</span> This chapter proposes reading the Devī Khaḍgamālā's recitation, already treated in Module 6 as a portable substitute for external Navāvaraṇa Pūjā, as functioning equally as an internalized equivalent of full Nyāsa practice — walking the practitioner\'s attention through the same body-points Nyāsa would physically mark, without requiring the physical ritual gesture. This functional extension is not stated explicitly in the Khaḍgamālā\'s own text.',
+    phala:'Closing Phase IV with Nyāsa completes the movement from external diagram (Phase II) through spoken mantra (Phase III) to installed, embodied sound (this phase) — setting up Phase V\'s shift from ritual mechanics to the narrative-psychological reading of the Saptaśatī\'s battles.'
+  }
+];
+
+const nav4 = document.getElementById('tabsNav4');
+const panels4 = document.getElementById('tabsPanels4');
+
+modules4.forEach((m, i) => {
+  const btn = document.createElement('button');
+  btn.className = 'tab-btn' + (i===0 ? ' active' : '');
+  btn.textContent = m.label;
+  btn.onclick = () => {
+    nav4.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    panels4.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(m.id).classList.add('active');
+  };
+  nav4.appendChild(btn);
+
+  const panel = document.createElement('div');
+  panel.className = 'tab-panel' + (i===0 ? ' active' : '');
+  panel.id = m.id;
+  panel.innerHTML = `
+    <div class="module-focus">${m.focus}</div>
+    <div class="lpup-grid">
+      <div class="lpup-card"><h4>Lakṣaṇa — Definition</h4><p>${m.lakshana}</p></div>
+      <div class="lpup-card"><h4>Prakriyā — Process</h4><p>${m.prakriya}</p></div>
+      <div class="lpup-card"><h4>Udāharaṇa — Textual Evidence</h4><p>${m.udaharana}</p></div>
+      <div class="lpup-card"><h4>Phala — Import</h4><p>${m.phala}</p></div>
+    </div>
+  `;
+  panels4.appendChild(panel);
+});
+
+const modules5 = [
+  {
+    id:'m18',
+    label:'M18 · Battle Psychodynamics',
+    focus:'The Saptaśatī\'s demons as a sequence of internal obstacles',
+    lakshana:'The three Caritras of the Durgā Saptaśatī narrate three distinct demon-figures — Madhu-Kaitabha, Mahiṣāsura, and Raktabīja — each conventionally read in secondary Śākta literature as figuring a specific psychological obstacle: mental inertia, untamed ego, and self-replicating discursive thought respectively.',
+    prakriya:'Read in sequence, the three episodes trace a graduated clearing-process: Madhu-Kaitabha's defeat wakes Viṣṇu from inert sleep (addressing Tamas first, since nothing else can proceed while the mind is dull); Mahiṣāsura's shape-shifting instability is then confronted directly (addressing Rajas, the erratic energy that arises once inertia lifts); and Raktabīja's self-multiplying blood-drops are finally halted by Kālī\'s direct intervention (addressing Vikalpa, the proliferation of thought-forms that Rajas alone generates once it has energy but no discipline).',
+    udaharana:'<span class="evidence-tag tag-synth">Synthetic</span> This Tamas–Rajas–Vikalpa correlation is an inherited interpretive convention from secondary Śākta exegesis rather than a set of categories the Saptaśatī itself names; the text narrates the demons\' actions and defeats without labeling them psychologically, so this reading should be taken as traditional gloss, not primary-text terminology.',
+    phala:'Presented here after Phases I–IV rather than before them, this module frames the battles as a precondition-clearing sequence: the tradition\'s own placement of the Saptaśatī\'s recitation as preparatory to Śrī Vidyā practice becomes legible once the three demons are read as the specific obstacles that would otherwise destabilize the mantra, geometry, and physiology already developed in this chapter.'
+  },
+  {
+    id:'m19',
+    label:'M19 · The Three Caritras',
+    focus:'Mahākālī, Mahālakṣmī, Mahāsarasvatī as a destroy-sustain-illumine sequence',
+    lakshana:'The Saptaśatī\'s own traditional framing divides its three Caritras among three cosmic functions: Mahākālī governs the destructive Prathama Caritra, Mahālakṣmī the sustaining Madhyama Caritra, and Mahāsarasvatī the illuminating Uttara Caritra — a threefold division stated in the text\'s own traditional structure, not proposed by this chapter.',
+    prakriya:'Read against Module 18\'s obstacle-sequence, each goddess-function corresponds to what that phase of practice requires: Mahākālī\'s destructive force clears inertia and ego, Mahālakṣmī\'s sustaining force stabilizes the practitioner once the obstacles are cleared, and Mahāsarasvatī\'s illuminating force enables the discriminative clarity (Viveka) that Module 6 already identified as the Khaḍgamālā\'s own defining function.',
+    udaharana:'<span class="evidence-tag tag-flag">Interdisciplinary framing</span> The correlation of this destroy–sustain–illumine sequence with the Sāṃkhya Guṇa triad (Tamas–Rajas–Sattva) is a comparative convenience common in secondary literature on Śākta philosophy; the Saptaśatī itself does not use Sāṃkhya vocabulary, so this framing is offered as an orientation aid rather than a textual claim.',
+    phala:'This module supplies the theological structure underlying Module 18\'s psychological reading: the three demons are defeated by three different goddess-functions because three different capacities — destructive, sustaining, illuminating — are each required to clear a different kind of obstacle, a distinction that flattens if the three Caritras are read only as one undifferentiated victory narrative.'
+  },
+  {
+    id:'m20',
+    label:'M20 · Sahasranāma / Triśatī Comparative',
+    focus:'Two texts, two functions, one deity-system',
+    lakshana:'The Lalitha Sahasranāma and Lalitha Triśatī are read comparatively as two different functional modes of the same underlying system: the thousand-name text operates as an encyclopedic register — comprehensive, discursive, suited to detailed study — while the three-hundred-name text operates as a concentrated, high-frequency register keyed directly to mantra recitation, as already established in Module 11\'s Mantra-Vigraha reading.',
+    prakriya:'Names shared across both texts — Kāmeśvarī, Lalitā, Tripurasundarī among them — are read for how their context and surrounding emphasis differ between the two: the Sahasranāma tends to embed a shared name within an extended descriptive sequence, while the Triśatī\'s tighter structure (Module 11\'s twenty-names-per-letter scheme) gives the same name a more concentrated phonemic role.',
+    udaharana:'Bhāskararāya Makhin\'s commentarial work on both texts — the Saubhāgyabhāskara for the Sahasranāma and his separate Triśatī commentary — is treated as the primary evidentiary bridge for this comparison, since a single commentator working across both texts provides the most reliable basis for claims about how the tradition itself understood their relationship.',
+    phala:'Closing Phase V with this comparative study prepares directly for Phase VI: having shown across five phases that Sahasranāma, Śrī Cakra, Pañcadaśākṣarī, Triśatī, and Saptaśatī are five registers of one structure, this module\'s explicit two-text comparison is the clearest single demonstration of that claim, and functions as a bridge into Phase VI\'s full synthesis.'
+  }
+];
+
+const nav5 = document.getElementById('tabsNav5');
+const panels5 = document.getElementById('tabsPanels5');
+
+modules5.forEach((m, i) => {
+  const btn = document.createElement('button');
+  btn.className = 'tab-btn' + (i===0 ? ' active' : '');
+  btn.textContent = m.label;
+  btn.onclick = () => {
+    nav5.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    panels5.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(m.id).classList.add('active');
+  };
+  nav5.appendChild(btn);
+
+  const panel = document.createElement('div');
+  panel.className = 'tab-panel' + (i===0 ? ' active' : '');
+  panel.id = m.id;
+  panel.innerHTML = `
+    <div class="module-focus">${m.focus}</div>
+    <div class="lpup-grid">
+      <div class="lpup-card"><h4>Lakṣaṇa — Definition</h4><p>${m.lakshana}</p></div>
+      <div class="lpup-card"><h4>Prakriyā — Process</h4><p>${m.prakriya}</p></div>
+      <div class="lpup-card"><h4>Udāharaṇa — Textual Evidence</h4><p>${m.udaharana}</p></div>
+      <div class="lpup-card"><h4>Phala — Import</h4><p>${m.phala}</p></div>
+    </div>
+  `;
+  panels5.appendChild(panel);
+});
+
+const modules6 = [
+  {
+    id:'m21',
+    label:'M21 · Bāhya vs. Antar Yāga',
+    focus:'From external ritual to pure internal contemplation',
+    lakshana:'Kaulācāra names the path of structured external worship using physical ritual materials — the Navāvaraṇa Pūjā apparatus developed across Phases II and IV in its full form. Samayācāra names the alternative: purely internal meditation, performed within the "thousand-petaled lotus" of the crown, requiring no external material at all.',
+    prakriya:'This module treats Samayācāra not as a rejection of everything built in Phases II–IV but as their internalization: every element of external worship — the Cakra\'s geometry (Module 5), the Khaḍgamālā\'s sequence (Module 6), the mantra\'s syllables (Module 9) — is understood, on the Samayācāra reading, to correspond to a specific internal state or physiological function, per the Bhavanopaniṣad\'s systematic element-by-element mapping.',
+    udaharana:'Lalitha Sahasranāma\'s paired epithets Antarmukha-samārādhyā ("worshipped by those whose gaze turns inward") and Bahirmukha-sudurlabhā ("difficult to reach by those caught in external distraction") are read per Saubhāgyabhāskara as the text\'s own explicit preference for the Samayācāra orientation, without thereby declaring Kaulācāra practice invalid.',
+    phala:'This module reframes the entire chapter retrospectively: Phases II through IV\'s external apparatus — Cakra, mantra, Nyāsa — were never meant to terminate in the apparatus itself but to be internalized, which is precisely the movement Module 25\'s closing synthesis will complete.'
+  },
+  {
+    id:'m22',
+    label:'M22 · Neuro-Acoustic Science',
+    focus:'Interdisciplinary extension: mantra physics and modern neuroscience',
+    lakshana:'<span class="evidence-tag tag-flag">Interdisciplinary extension</span> This module connects traditional claims about mantra-sound to contemporary research on articulation and neural response — specifically, how the repetitive tongue and palate movements required to pronounce Sanskrit phonemes engage cranial nerve pathways and reflex zones on the hard palate.',
+    prakriya:'The proposed mechanism is that sustained, structured vocalization — of the kind required by lengthy recitation such as the Siddha Kuñjikā (Module 13) or the full Sahasranāma — produces a state of vibrational entrainment, in which the steady, repetitive movement of voice and breath is associated with a shift from active Beta-wave brain activity toward the more settled Alpha and Theta patterns associated with meditative states.',
+    udaharana:'This module makes no attempt to cite the five core texts as evidence for a neurophysiological mechanism, since they make no such claims; the material here is offered strictly as a modern lens that may help explain why sustained mantra practice produces the subjective effects the tradition describes, not as an interpretation of the texts themselves.',
+    phala:'Presented honestly as analogy rather than textual scholarship, this module\'s value is heuristic: it gives a reader unfamiliar with the tradition a bridge from what such practice might do physiologically to why the tradition invested so heavily in precise phonemic structure (Modules 9–11) rather than treating pronunciation as incidental.'
+  },
+  {
+    id:'m23',
+    label:'M23 · Cymatics &amp; Yantra',
+    focus:'Interdisciplinary extension: sound organizing matter into pattern',
+    lakshana:'<span class="evidence-tag tag-flag">Interdisciplinary extension</span> Cymatics is the study of visible sound-vibration patterns — the observation that sound waves passing through a medium (sand, water, fine powder) organize that medium into geometric figures. This module offers cymatic phenomena as a physical analogy for how a Yantra like the Śrī Cakra (Module 5) might be understood in relation to the Mantra (Modules 9–11) that accompanies it.',
+    prakriya:'The analogy proposed is structural, not causal: cymatics demonstrates that sound and geometric pattern are physically linked phenomena in at least some material systems, which makes the tradition\'s own claim — that the Pañcadaśākṣarī\'s sound and the Śrī Cakra\'s geometry are two expressions of one reality — more intuitively graspable to a modern reader, without claiming that the Śrī Cakra was produced by, or operates via, the same acoustic-physical mechanism documented in a cymatics experiment.',
+    udaharana:'This module draws specifically on Hans Jenny\'s cymatics research as the standard reference point for this analogy in secondary literature connecting mantra and yantra; no claim is made that the five core texts anticipated or refer to this research.',
+    phala:'Read cautiously, this module\'s function is illustrative rather than probative: it should not be taken as a scientific validation of the Nāda-Bindu-Kalā doctrine established in Module 3, only as a vivid modern image for a structural claim the tradition already makes on its own terms.'
+  },
+  {
+    id:'m24',
+    label:'M24 · Dīkṣā &amp; Ethics',
+    focus:'Transmission rules and ethical safeguards',
+    lakshana:'Guru-Mukhi Vidyā — knowledge received directly from a qualified teacher\'s own mouth rather than from independent textual study — is the traditional condition for entering advanced Śrī Vidyā practice, structured through three progressive stages: Bālā Dīkṣā, Pañcadaśī Dīkṣā, and Mahā-Ṣoḍaśī Dīkṣā (the last of which alone transmits the sixteenth syllable discussed structurally, but not specified, in Module 10).',
+    prakriya:'This staged structure is read as a deliberate safeguard against exactly the risk a chapter like this one cannot fully mitigate: intellectual access to a practice\'s structure (which this chapter provides) is explicitly distinguished, within the tradition itself, from authorized capacity to perform that practice (which requires lineage transmission this chapter does not and cannot substitute for).',
+    udaharana:'The universal ethical framework of Yama and Niyama — the restraints and observances foundational to classical yogic practice generally — is cited across Śrī Vidyā lineage literature as the non-negotiable ethical floor beneath any of the specific techniques this chapter has described, ensuring that concentration and energetic capacity gained through practice are held to a constructive standard.',
+    phala:'This module functions as this chapter\'s own explicit statement of its limits: everything documented in Modules 1 through 23 is offered as textual-comparative scholarship, not as a substitute for, or an implicit invitation to bypass, the lineage-based transmission the tradition itself requires before any of this material is undertaken as practice rather than studied as a text.'
+  },
+  {
+    id:'m25',
+    label:'M25 · Synthesis — Ātma-rūpā',
+    focus:'Final convergence: Nāda, Bindu, and Yantra as the practitioner\'s own Self',
+    lakshana:'The Lalitha Sahasranāma\'s climax name, Ātma-rūpā — "she whose very form is the individual Self" — is read as the terminus toward which every other name, and by extension every module of this chapter, has been moving: not a further attribute to add to the list, but the recognition that the entity being described throughout was never separate from the reader\'s own awareness.',
+    prakriya:'Read back through the chapter\'s six phases, this is the same condensation traced in Module 3 (Nāda to Bindu to Kalā) arriving at its final and most intimate instance: the Bindu that Modules 5 and 7 located at the centre of a diagram, and that Module 10 located as the silent syllable beneath spoken mantra, is now identified as the point of the reader\'s own consciousness — the geometry was never external, the mantra was never merely recited, because both were always descriptions of the same awareness doing the describing.',
+    udaharana:'This closing module does not introduce a new textual citation so much as re-read the full five-text canon in retrospect: the Sahasranāma\'s progression from Śrī Mātā (Module 1) to Ātma-rūpā brackets the entire nominal register; the Khaḍgamālā\'s procedural journey inward to the Bindu (Module 6) and the Triśatī\'s phonemic convergence on Hrīṃ (Module 11) are read as the same arc in their own registers.',
+    phala:'The chapter\'s stated conclusion is deliberately modest in its truth-claim: it does not ask the reader to accept the tradition\'s theology, only to recognize — as a matter of textual and structural analysis — that five genre-distinct texts, read carefully against each other, converge on one consistent architecture, and that this convergence is itself sufficient grounds for taking the tradition seriously as a rigorous system of thought, independent of any further metaphysical commitment.'
+  }
+];
+
+const nav6 = document.getElementById('tabsNav6');
+const panels6 = document.getElementById('tabsPanels6');
+
+modules6.forEach((m, i) => {
+  const btn = document.createElement('button');
+  btn.className = 'tab-btn' + (i===0 ? ' active' : '');
+  btn.textContent = m.label;
+  btn.onclick = () => {
+    nav6.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    panels6.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(m.id).classList.add('active');
+  };
+  nav6.appendChild(btn);
+
+  const panel = document.createElement('div');
+  panel.className = 'tab-panel' + (i===0 ? ' active' : '');
+  panel.id = m.id;
+  panel.innerHTML = `
+    <div class="module-focus">${m.focus}</div>
+    <div class="lpup-grid">
+      <div class="lpup-card"><h4>Lakṣaṇa — Definition</h4><p>${m.lakshana}</p></div>
+      <div class="lpup-card"><h4>Prakriyā — Process</h4><p>${m.prakriya}</p></div>
+      <div class="lpup-card"><h4>Udāharaṇa — Textual Evidence</h4><p>${m.udaharana}</p></div>
+      <div class="lpup-card"><h4>Phala — Import</h4><p>${m.phala}</p></div>
+    </div>
+  `;
+  panels6.appendChild(panel);
+});
+</script>
+<section class="block" id="canon-rationale">
+    <h2><span class="num">§—</span>Preliminary Module — Canon Selection: Rationale, Execution, and Metaphor</h2>
+    <p class="lede">The five texts anchoring this chapter were not chosen because they are the best-known Śākta sources, or because they happened to be at hand. Each was selected because it occupies a distinct <em>register</em> — nominal, procedural, theological, phonemic, narrative — that the other four cannot supply, and because the chapter's central argument (that Nāda-Bindu-Kalā is one structure appearing in five literary forms) is falsifiable only if the five registers are genuinely different from each other. A canon of five texts that all did the same thing would prove nothing. What follows states, for each text individually, why it was chosen, how it was actually used in the preceding twenty-five modules, and offers one worked metaphor for the kind of role it plays — since a metaphor, tested against the text's real function, is a useful check on whether the stated rationale is doing real work or is merely decorative.</p>
+
+    <div class="tabs-nav" id="tabsNavR"></div>
+    <div id="tabsPanelsR"></div>
+  </section>
+
+<script>
+(function(){
+const modulesR = [
+  {
+    id:'rA',
+    label:'Lalitha Sahasranāma',
+    focus:'Chosen for its nominal completeness — the master index of the entire structure',
+    rationale:'No other text in the canon names every stage of the Nāda-Bindu-Kalā sequence individually. The Sahasranāma\'s thousand epithets include dedicated names for the resonant phase (Nāda-rūpā), the condensed phase (Bindu-maṇḍala-vāsinī), the tissue-governing deities of Kuṇḍalinī ascent, and the closing identity-claim (Ātma-rūpā). It was selected specifically because its list-form allows a claim made abstractly elsewhere in the canon to be checked against a concrete, numbered textual anchor.',
+    execution:'Throughout Modules 1–25, the Sahasranāma was not read start to finish for its own sake; it was consulted the way a reference work is consulted — a structural claim proposed in another text\'s register (geometric, phonemic, narrative) was cross-checked against the specific name and commentarial gloss (per Bhāskararāya\'s Saubhāgyabhāskara) that would confirm or fail to confirm it. Where no corresponding name existed, the chapter flagged the claim as synthetic rather than canon.',
+    metaphor:'The Sahasranāma functions in this chapter the way a specimen catalogue functions for a naturalist: not read for narrative pleasure, but consulted name-by-name to confirm that a proposed structural claim has a specimen on file. A catalogue with a gap in it tells you something too — it is precisely where the Sahasranāma is silent on a point (as in Module 18\'s psychological reading of the demons) that this chapter had to reach for other evidence and mark the claim accordingly.'
+  },
+  {
+    id:'rB',
+    label:'Devī Khaḍgamālā',
+    focus:'Chosen for its procedural sequencing — confirming that the geometry is meant to be walked',
+    rationale:'The Sahasranāma tells you what things are named; it does not tell you in what order a practitioner engages them. The Khaḍgamālā was selected precisely to supply that missing sequence — it is the only one of the five texts organized as a step-by-step itinerary through the Śrī Cakra\'s nine enclosures, and without it Module 5\'s geometric reading would remain a static diagram rather than a practice.',
+    execution:'Modules 5, 6, and 17 in particular used the Khaḍgamālā\'s invocation-order as direct evidence that the Navāvaraṇa is intended to be traversed outward-to-inward (or the reverse), not merely contemplated as a finished picture. Where the chapter extended this into a claim the Khaḍgamālā does not state outright — such as reading its recitation as a substitute for physical Nyāsa (Module 17) — that extension was marked synthetic rather than attributed to the text.',
+    metaphor:'The Khaḍgamālā functions like a stage-direction script accompanying a play whose dialogue is supplied by the Sahasranāma: the names tell you what is said, the Khaḍgamālā tells you where each figure stands and when they move. Read the names alone and you have a cast list; read the Khaḍgamālā alongside them and you have a performance.'
+  },
+  {
+    id:'rC',
+    label:'Devī Bhāgavatam',
+    focus:'Chosen for the theological scaffolding the other four presuppose but never state',
+    rationale:'None of the other four texts pauses to establish why a nominal list, a ritual sequence, a mantra, or a myth-cycle should be read as describing the same deity in the first place. The Devī Bhāgavatam — specifically its Devī Gītā section and its Maṇidvīpa cosmography — was selected because it is the one text in the canon that states the underlying doctrine (the Nirguṇa/Saguṇa non-duality of Module 1, the cosmic geography of Module 8) that the other four take for granted.',
+    execution:'This text was used earliest and least frequently by module-count, but load-bearing wherever it appeared: Module 1\'s foundational Śiva-Śakti definition and Module 8\'s Maṇidvīpa reading both depend on it directly, and every subsequent phase implicitly assumes the doctrinal ground it establishes, even where it is not re-cited verse by verse.',
+    metaphor:'The Devī Bhāgavatam functions as the foundation of a building whose ornamented façade is supplied by the other four texts. A visitor admiring the Sahasranāma\'s intricate name-work, the Khaḍgamālā\'s procession, or the Saptaśatī\'s battle-scenes rarely looks at the foundation directly — but every one of those visible features would be standing on nothing without it.'
+  },
+  {
+    id:'rD',
+    label:'Lalitha Triśatī',
+    focus:'Chosen as the phonemic bridge between name and mantra',
+    rationale:'The Sahasranāma names the deity; the Pañcadaśākṣarī mantra (Module 9) sounds the deity; the Triśatī was selected because it is the only text in the canon that explicitly shows the arithmetic connecting the two — three hundred names distributed exactly twenty to each of the mantra\'s fifteen root syllables. Without it, the claim that name and mantra are the same structure in two registers (Module 11\'s Mantra-Vigraha) would remain assertion rather than demonstration.',
+    execution:'Modules 7, 9, 11, and 20 used the Triśatī\'s syllable-by-syllable organization as the direct evidentiary link between the nominal register (Sahasranāma) and the phonemic register (Pañcadaśākṣarī), and Module 20\'s comparative study used it as the necessary second term without which a Sahasranāma-alone reading could not be checked for consistency.',
+    metaphor:'The Triśatī works like a piano reduction of an orchestral score: it compresses everything the full orchestra (the thousand names) plays into a version performable on a single instrument (the fifteen-syllable mantra), and a musician can check the reduction against the full score at any bar to confirm nothing structural was lost in the compression.'
+  },
+  {
+    id:'rE',
+    label:'Durgā Saptaśatī',
+    focus:'Chosen for its narrative-psychodynamic counterweight to the meditative registers',
+    rationale:'The other four texts describe a calm, ordered ascent toward the Bindu. The Saptaśatī was selected precisely because it does not: it supplies the canon\'s only sustained narrative of resistance, obstacle, and forceful clearing, and the chapter takes the position (Module 18) that this counter-register is not incidental but a necessary precondition — the tradition\'s own reason for placing Saptaśatī recitation before, not alongside, quieter Śrī Vidyā practice.',
+    execution:'Modules 4, 12, 13, 18, and 19 used the Saptaśatī\'s Bīja-density and battle-sequence as evidence of a distinct sonic and narrative register operating under the same Nāda-Bindu-Kalā mechanics, while consistently marking the psychological gloss on the demons (Tamas/Rajas/Vikalpa) as inherited secondary-literature convention rather than the text\'s own vocabulary.',
+    metaphor:'The Saptaśatī functions like the tempering stage in metal-work: the raw material must first be subjected to heat and controlled stress — the demon-battles — before the finer, quieter instrument (sustained mantra practice) can be shaped from it and hold its edge. Skip the tempering and the blade may look the same, but the tradition\'s own sequencing suggests it will not hold.'
+  }
+];
+
+const navR = document.getElementById('tabsNavR');
+const panelsR = document.getElementById('tabsPanelsR');
+
+modulesR.forEach((m, i) => {
+  const btn = document.createElement('button');
+  btn.className = 'tab-btn' + (i===0 ? ' active' : '');
+  btn.textContent = m.label;
+  btn.onclick = () => {
+    navR.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    panelsR.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(m.id).classList.add('active');
+  };
+  navR.appendChild(btn);
+
+  const panel = document.createElement('div');
+  panel.className = 'tab-panel' + (i===0 ? ' active' : '');
+  panel.id = m.id;
+  panel.innerHTML = `
+    <div class="module-focus">${m.focus}</div>
+    <div class="lpup-grid">
+      <div class="lpup-card"><h4>Rationale — Why This Text</h4><p>${m.rationale}</p></div>
+      <div class="lpup-card"><h4>Execution — How It Was Used</h4><p>${m.execution}</p></div>
+      <div class="lpup-card"><h4>Metaphor — Worked Example</h4><p>${m.metaphor}</p></div>
+    </div>
+  `;
+  panelsR.appendChild(panel);
+});
+})();
+</script>
+</body>
+</html>
